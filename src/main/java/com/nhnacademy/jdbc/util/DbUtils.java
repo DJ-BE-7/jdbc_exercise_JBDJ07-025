@@ -5,6 +5,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbUtils {
+    private static final String DB_URL = "jdbc:mysql://133.186.241.167:3306/nhn_academy_125";
+    private static final String DB_USER = "nhn_academy_125";
+    private static final String DB_PASSWORD = "sA4aiwse!";
+
     public DbUtils(){
         throw new IllegalStateException("Utility class");
     }
@@ -13,7 +17,7 @@ public class DbUtils {
         Connection connection = null;
         try {
             //todo connection.
-            connection = DriverManager.getConnection("jdbc:mysql://ip:3306/database","user_name","user_password");
+            connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
