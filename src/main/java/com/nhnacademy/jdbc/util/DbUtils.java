@@ -5,6 +5,10 @@ import javax.sql.DataSource;
 import java.time.Duration;
 
 public class DbUtils {
+    private static final String DB_URL = "jdbc:mysql://133.186.241.167:3306/nhn_academy_125";
+    private static final String DB_USER = "nhn_academy_125";
+    private static final String DB_PASSWORD = "sA4aiwse!";
+
     public DbUtils(){
         throw new IllegalStateException("Utility class");
     }
@@ -14,9 +18,9 @@ public class DbUtils {
     static {
         BasicDataSource basicDataSource = new BasicDataSource();
         //todo#0 {ip},{database},{username},{password} 설정 합니다.
-        basicDataSource.setUrl("jdbc:mysql://{ip}:3306/{database}");
-        basicDataSource.setUsername("{username}");
-        basicDataSource.setPassword("{password}");
+        basicDataSource.setUrl(DB_URL);
+        basicDataSource.setUsername(DB_USER);
+        basicDataSource.setPassword(DB_PASSWORD);
 
         basicDataSource.setInitialSize(5);
         basicDataSource.setMaxTotal(5);
